@@ -1,0 +1,20 @@
+---
+label: NewsPost
+hide_body: false
+is_partial: false
+fields:
+- type: text
+  label: News Title
+  name: news_title
+  description: Title for the news post.
+  config:
+    required: true
+- type: textarea
+  label: Main news text here
+  name: main_news_text_here
+  description: This is where most of the content of the news post will go.
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: html-blocks
