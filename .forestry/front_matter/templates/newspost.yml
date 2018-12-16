@@ -18,5 +18,16 @@ fields:
     wysiwyg: true
     schema:
       format: html-blocks
+- type: select
+  name: layout
+  config:
+    source:
+      type: simple
+    required: true
+    options:
+    - posts
+  label: Layout
+  description: Which Layout to use.
+  hidden: true
 pages:
 - _posts/2018-12-16-postdoc-hire.html
