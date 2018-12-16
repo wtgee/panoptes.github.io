@@ -28,6 +28,7 @@ fields:
     - posts
   label: Layout
   description: Which Layout to use.
-  hidden: true
+  hidden: false
+  default: posts
 pages:
 - _posts/2018-12-16-postdoc-hire.html
