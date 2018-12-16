@@ -1,7 +1,7 @@
 ---
 title: PANOPTES Baseline Unit Description
----
 
+---
 > Author: James Synge (PANOPTES Beta-test Builder, Lexington, MA, USA)
 
 The first Baseline PANOPTES unit, PAN001, was upgraded in March 2017 to the
@@ -12,7 +12,7 @@ are processed to extract scientifically useful data; for more on that, read
 describing the early history of Project PANOPTES, and the paper by [Gee, Guyon,
 Walawender, Jovanovic and Boucher](http://arizona.openrepository.com/arizona/handle/10150/622806).
 
-![PAN001 on Mauna Loa](images/pan001_desc/pan001_with_labelled_components.png)
+![PAN001 with various components labelled.](/images/pan001_with_labelled_components.png "PAN001 on Maunaloa")
 
 # Control Box
 
@@ -26,7 +26,7 @@ side for an air inlet and two smaller holes for air outlet and for wires.
 
 ## Computer & PANOPTES Observatory Control System
 
-The brains of a PANOPTES unit is a small computer running **POCS**, the [PANOPTES Observatory Control System](https://github.com/panoptes/POCS). The computer is an Intel NUC, a small form factor PC connected to the internet and via USB to the rest of the unit, enabling it to talk to the two DSLR cameras, the equatorial mount and the two Arduinos that provide it the ability to read data from sensors and to control switches. 
+The brains of a PANOPTES unit is a small computer running **POCS**, the [PANOPTES Observatory Control System](https://github.com/panoptes/POCS). The computer is an Intel NUC, a small form factor PC connected to the internet and via USB to the rest of the unit, enabling it to talk to the two DSLR cameras, the equatorial mount and the two Arduinos that provide it the ability to read data from sensors and to control switches.
 
 > Internet access is not strictly necessary, as the unit can collect and store
 > images locally, simply choosing the best available field(s) each night.
@@ -83,17 +83,14 @@ At the "other end" of a PANOPTES unit from the Computer Box is the Camera Enclos
 
 The cameras are Canon Rebel SL1s (aka EOS 100D), the cheapest of the Canon DSLRs at this writing. Attached to those are Rokinon 85mm f/1.4 lenses, which provide a large field of view: 15 degrees x 10 degrees; as a result, a typical image of the night sky will contain 10s of thousands of stars. Note that the use of two cameras is not related to binocular vision. It provides us with more images to process, but at a lower cost than one camera with a larger lens with twice the light gathering of the two smaller lenses.
 
- A DC 12V power line and USB cable are fed through the mount and into the bottom of the enclosure. The DC 12V line is split to go to both a USB Hub and to the Camera Board. The Camera Board has:
+A DC 12V power line and USB cable are fed through the mount and into the bottom of the enclosure. The DC 12V line is split to go to both a USB Hub and to the Camera Board. The Camera Board has:
 
 * Two camera power circuits, each with a voltage regulator that outputs the DC 9V that the cameras require and a solid-state relay for switching the power to the camera on or off.
-
 * A 3-axis accelerometer used for measuring the orientation of the board. Note that when just sitting on the ground, an accelerometer measures 1G in the direction of the center of the earth (i.e. which direction is down); with suitable adjustment for the alignment of the accelerometer within the enclosure, we can use this to determine the orientation of the enclosure.
-
 * A connector for attaching a cable in turn connected to a temperature and humidity sensor.
-
 * An [Arduino Micro running software](https://github.com/panoptes/PACE/tree/develop/camera_board) that reports the sensor data to POCS over the USB connection, and reads instructions from POCS regarding turning the cameras on or off.
 
-As shown in the USB diagram above, the USB cable goes to a USB Hub, which is then connected to the cameras and to the Camera Board, providing POCS the ability to control each camera separately, and via the Camera Board to switch the cameras on and off as desired. 
+As shown in the USB diagram above, the USB cable goes to a USB Hub, which is then connected to the cameras and to the Camera Board, providing POCS the ability to control each camera separately, and via the Camera Board to switch the cameras on and off as desired.
 
 The cameras are attached to a ½" thick aluminum plate via the standard ¼-20 screws used for camera tripods. Below that plate is a pair of plates that sandwich the bottom of the plastic enclosure, holding it firmly. The camera plate attaches to the top plate of that pair, and the bottom plate of that pair is attached to a Vixen dovetail plate; that last plate is the one gripped by the equatorial mount.
 
